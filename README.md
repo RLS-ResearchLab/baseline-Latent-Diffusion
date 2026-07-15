@@ -1,0 +1,1 @@
+# baseline Latent Difusion
