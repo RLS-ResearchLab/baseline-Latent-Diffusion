@@ -53,4 +53,4 @@ def main(config_path):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else "dit.yaml")
+    main(sys.argv[1] if len(sys.argv) > 1 else "config/dit.yaml")
