@@ -15,5 +15,6 @@ def diffusion_loss(model, diffusion, z0, y, train=True):
     noise = torch.randn_like(z0)
     z_t = diffusion.q_sample(z0, t, noise)
     pred = model(z_t, t, y, train=train)
+    
     # training the model to predict the added noise so far
     return F.mse_loss(pred, noise) 

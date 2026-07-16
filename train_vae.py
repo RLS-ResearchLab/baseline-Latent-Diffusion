@@ -3,9 +3,9 @@ import sys
 import yaml
 import torch
 
-from models import build_model
-from losses import vae_loss
-from data import get_dataloader
+from src.models import build_model
+from src.losses import vae_loss
+from src.data import get_dataloader
 
 
 def main(config_path):
@@ -23,7 +23,7 @@ def main(config_path):
     step = 0
     for epoch in range(config["train"]["epochs"]):
         for x, _ in loader:
-            x = x.to(device)
+            x = x.cuda()
 
             opt.zero_grad()
 

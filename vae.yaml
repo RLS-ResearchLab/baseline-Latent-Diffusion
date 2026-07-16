@@ -2,7 +2,7 @@ model:
   img_size: 256
   patch_size: 16
   in_ch: 3
-  latent_dim: 512
+  latent_dim: 32
   embed_dim: 256
   enc_depth: 12
   dec_depth: 16
@@ -10,13 +10,12 @@ model:
 
 data:
   img_size: 256
-  batch_size: 32
+  batch_size: 64
   num_workers: 4
   data_root: ./data # set the root to the data folder (images should be stored in the right format: torchvision ImageFolder)
-  # /kaggle/input/datasets/gpiosenka/butterfly-images40-species/train
 
 train:
-  epochs: 10
+  epochs: 20
   lr: 3.0e-4
   kl_weight: 1.0e-2
   ckpt_path: checkpoints/vae.pt
